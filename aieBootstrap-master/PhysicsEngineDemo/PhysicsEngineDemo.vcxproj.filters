@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Managers">
       <UniqueIdentifier>{53b03069-38e2-46d6-8338-fd77cccf9488}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{3b41e570-6628-4e73-b708-4177de13f7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PhysicsObject">
+      <UniqueIdentifier>{f266240f-52ff-4908-9bf7-71ec10befcfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PhysicsEngineDemoApp.cpp">
@@ -52,9 +58,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsObject.cpp">
+      <Filter>Source Files\PhysicsObject</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,9 +90,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

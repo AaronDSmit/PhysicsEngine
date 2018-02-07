@@ -22,7 +22,7 @@ CollisionManager::CollisionManager()
 
 void CollisionManager::CheckCollisions(std::vector<PhysicsObject*>& m_actors)
 {
-	int actorCount = m_actors.size();
+	int actorCount = (int)m_actors.size();
 
 	for (int outer = 0; outer < actorCount - 1; outer++)
 	{
@@ -52,8 +52,13 @@ void CollisionManager::ResolveCollisions()
 {
 	for (auto collision : collisionList)
 	{
-		collision->obj1->OnCollision();
-		collision->obj2->OnCollision();
+		if (collision->obj1 == nullptr || collision->obj2 == nullptr)
+		{
+			delete collision;
+		}
+
+		collision->obj1->OnCollision(collision->obj2);
+		collision->obj2->OnCollision(collision->obj1);
 
 		// Resovlve
 
