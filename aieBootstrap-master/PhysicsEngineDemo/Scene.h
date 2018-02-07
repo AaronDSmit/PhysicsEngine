@@ -30,6 +30,7 @@ public:
 protected:
 	aie::Input* m_input;
 	SceneManager* m_manager;
+	std::vector<class PhysicsObject*> m_actors;
 	glm::vec4 backgroundColour;
 
 	~Scene();

@@ -22,7 +22,7 @@ public:
 	virtual void FixedUpdate(glm::vec2 gravity, float fixedDeltaTime) = 0;
 	virtual void Debug() = 0;
 	virtual void MakeGizmo() = 0;
-	virtual void ResetPosition() = 0;
+	//virtual void ResetPosition() = 0;
 
 	virtual void OnCollisionEnter(PhysicsObject* other) = 0;
 	virtual void OnCollision(PhysicsObject* other) = 0;

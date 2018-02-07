@@ -6,6 +6,10 @@
 #include "Scene.h"
 #include "MenuScene.h"
 
+#include <Gizmos.h>
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+
 
 PhysicsEngineDemoApp::PhysicsEngineDemoApp()
 {
@@ -19,6 +23,8 @@ PhysicsEngineDemoApp::~PhysicsEngineDemoApp()
 
 bool PhysicsEngineDemoApp::startup()
 {
+	aie::Gizmos::create(255U, 255U, 65535U, 65535U);
+
 	m_2dRenderer = new aie::Renderer2D();
 	m_manager = new SceneManager();
 
@@ -42,11 +48,14 @@ void PhysicsEngineDemoApp::shutdown()
 
 void PhysicsEngineDemoApp::update(float deltaTime)
 {
+	aie::Gizmos::clear();
+
 	aie::Input* input = aie::Input::getInstance();
 
 	if (m_manager != nullptr)
 	{
 		m_manager->Update(deltaTime);
+		m_manager->Draw();
 	}
 
 	// exit the application
@@ -77,8 +86,10 @@ void PhysicsEngineDemoApp::draw()
 	m_2dRenderer->begin();
 
 	// draw your stuff here!
+	float aspectRatio = (float)getWindowWidth() / getWindowHeight();
 
-
+	aie::Gizmos::draw2D(glm::orthoRH<float>(-100.0f, 100.0f, -100.0f / aspectRatio, 100.0f / aspectRatio, -1.0f, 1.0f));
+		
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "" + getFPS(), 0, 0);
 

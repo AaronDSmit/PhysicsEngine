@@ -28,7 +28,7 @@
     <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{3b41e570-6628-4e73-b708-4177de13f7e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PhysicsObject">
+    <Filter Include="Source Files\Objects">
       <UniqueIdentifier>{f266240f-52ff-4908-9bf7-71ec10befcfc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -61,9 +61,12 @@
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsObject.cpp">
-      <Filter>Source Files\PhysicsObject</Filter>
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="RigidBody.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,6 +99,9 @@
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="RigidBody.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

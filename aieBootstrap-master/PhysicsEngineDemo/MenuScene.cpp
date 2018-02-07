@@ -38,7 +38,10 @@ void MenuScene::HandleInput()
 {
 	if (m_input->wasKeyPressed(aie::INPUT_KEY_SPACE))
 	{
-		m_manager->PushScene(new SimulationScene(m_manager));
+		SimulationScene* sim = new SimulationScene(m_manager);
+		sim->SetGravity(glm::vec2(0.0f, -9.8f));
+
+		m_manager->PushScene(sim);
 	}
 
 	if (m_input->wasKeyPressed(aie::INPUT_KEY_ESCAPE))
