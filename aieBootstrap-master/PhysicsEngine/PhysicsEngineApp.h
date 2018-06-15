@@ -2,12 +2,15 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
+#include <glm/glm.hpp>
+#include <memory>
 
-class Application2D : public aie::Application {
+class PhysicsEngineApp : public aie::Application
+{
 public:
 
-	Application2D();
-	virtual ~Application2D();
+	PhysicsEngineApp();
+	virtual ~PhysicsEngineApp();
 
 	virtual bool startup();
 	virtual void shutdown();
@@ -18,4 +21,6 @@ public:
 protected:
 
 	aie::Renderer2D*	m_2dRenderer;
+	std::unique_ptr<class PhysicsScene> m_scene;
+	glm::vec4 m_backgroundColour;
 };
